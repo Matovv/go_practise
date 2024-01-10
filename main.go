@@ -8,5 +8,5 @@ import (
 func main() {
 	fmt.Println("Hello People 😂")
 	x := helperRepo1.Multiply(3,10)
-	fmt.Println(x)
+	fmt.Println(x,helperRepo1.Version15())
 }
