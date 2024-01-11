@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"github.com/Matovv/helper-repo-1"
+	"math/rand"
 )
 
 func main() {
@@ -22,5 +23,7 @@ func main() {
 	for k,v := range m {
 		fmt.Println("key is - ", k, " and value is - ", v)
 	}
+
+	fmt.Println(rand.Intn(100))
 	
 }
