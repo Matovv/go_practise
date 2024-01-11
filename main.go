@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"github.com/Matovv/helper-repo-1"
 	"math/rand"
+	"sort"
 )
 
 func main() {
@@ -14,7 +15,7 @@ func main() {
 	xi := []string{"lol", "back", "assman"}
 	m := map[string]int{
 		"civi": 232,
-		"cumshet": 999,
+		"bibi": 999,
 	}
 
 	for i,v := range xi {
@@ -25,5 +26,15 @@ func main() {
 	}
 
 	fmt.Println(rand.Intn(100))
+
+	xiping := []int{5,9,2,12}
+	fmt.Println(SortAndReturn(xiping))
 	
 }
+
+func SortAndReturn(x []int) []int {
+	a := make([]int,len(x))
+	copy(a,x)
+	sort.Ints(a)
+	return a
+} 
