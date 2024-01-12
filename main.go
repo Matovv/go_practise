@@ -20,8 +20,8 @@ func (e *Engine) Start() {
 
 type MyType int
 
-func (mt MyType) Multi() MyType{
-	return mt*2
+func (mt *MyType) Multi() {
+	*mt*=2
 }
 
 func main() {
@@ -60,8 +60,11 @@ func main() {
     fmt.Println("Original -",someVar)
 
 	var mt MyType = 5;
-
-	log.Println(mt.Multi())
+	log.Println(mt)
+	mt.Multi()
+	log.Println(mt)
+	mt.Multi()
+	log.Println(mt)
 
 	
 }
