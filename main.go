@@ -56,9 +56,15 @@ func main() {
 	newEngine.Start();
 
 	someVar := 10.0;
+	someVar2 := &someVar
     fmt.Println("Original before -",someVar)
     fmt.Println("Modified -",Multiply(&someVar))
     fmt.Println("Original after -",someVar)
+    fmt.Println("SomeVar2 before -",*someVar2)
+	*someVar2 *= 2
+    fmt.Println("SomeVar2 after -",*someVar2)
+    fmt.Println("SomeVar1 after -",someVar)
+
 
 	var mt MyType = 5;
 	log.Println(mt)
