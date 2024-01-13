@@ -1,3 +1,5 @@
+// File create, write, close
+
 package main
 
 import (

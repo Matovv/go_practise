@@ -1,3 +1,5 @@
+// Concurrency basics: goroutines, sync.WaitGroup, sync.Mutex and atomic
+
 package main
 
 import (

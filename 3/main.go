@@ -1,3 +1,5 @@
+// types and interfaces, and unit testing
+
 package main
 
 import (

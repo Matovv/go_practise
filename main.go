@@ -1,3 +1,5 @@
+// Basic Go training
+
 package main
 
 import (

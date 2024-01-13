@@ -1,3 +1,6 @@
+// Database simulation, more complex interface
+
+
 package main
 
 import (
