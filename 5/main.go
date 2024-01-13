@@ -16,6 +16,7 @@ type Person struct {
 	Password []byte
 }
 
+// Login function for Person, checking wether input password is the same as the stored hashed password.
 func(p Person) Login(password string) string {
 	fmt.Printf("User %d attempting to login...\n", p.ID)
 	err := bcrypt.CompareHashAndPassword(p.Password, []byte(password))
@@ -91,7 +92,7 @@ func main() {
 	fmt.Println(personGroup2)
 }
 
-// Generic Wrapper Function for json.Marshal() with error handling
+// Generic Wrapper Function for json.Marshal() with error handling.
 func JsonMarshal[T any](obj T) []byte {
 	json, err := json.Marshal(obj)
 	if err != nil {
@@ -102,7 +103,7 @@ func JsonMarshal[T any](obj T) []byte {
 	return json
 }
 
-// Generic Wrapper Function for json.Unmarshal() with error handling
+// Generic Wrapper Function for json.Unmarshal() with error handling.
 func JsonUnmarshal[T any](data []byte, obj *T) {
 	err := json.Unmarshal(data, &obj)
 	if err != nil {
@@ -112,6 +113,7 @@ func JsonUnmarshal[T any](data []byte, obj *T) {
 	}
 }
 
+// Wrapper for bcrypt password generator with error handling.
 func GeneratePassword(id int, password []byte) []byte {
 	hashedPassword, err := bcrypt.GenerateFromPassword(password,10)
 	fmt.Printf("Crypting password for User %d ...\n",id)
