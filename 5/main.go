@@ -13,6 +13,10 @@ type Person struct {
 	Age   int
 }
 
+func (p Person) String() string {
+	return fmt.Sprintf("%d - %s %s %d\n", p.ID, p.First, p.Last, p.Age)
+}
+
 func main() {
 
 	person1 := Person{
@@ -36,6 +40,8 @@ func main() {
 		Age:   25,
 	}
 
+	fmt.Println(person1)
+
 	personGroup := []Person{person1, person2, person3}
 
 	fmt.Printf("%+v\n", personGroup)
@@ -45,7 +51,7 @@ func main() {
 		fmt.Println("error:", err)
 	}
 	defer f.Close()
-    
+
 	_, err = f.Write(JsonMarshal(personGroup))
 	if err != nil {
 		fmt.Println("Error on write:", err)
@@ -62,7 +68,7 @@ func main() {
 	}
 
 	var personGroup2 []Person
-	JsonUnmarshal(rf,&personGroup2)
+	JsonUnmarshal(rf, &personGroup2)
 	fmt.Println(personGroup2)
 }
 
@@ -78,7 +84,7 @@ func JsonMarshal[T any](obj T) []byte {
 }
 
 // Generic Wrapper Function for json.Unmarshal() with error handling
-func JsonUnmarshal[T any]( data []byte, obj *T) {
+func JsonUnmarshal[T any](data []byte, obj *T) {
 	err := json.Unmarshal(data, &obj)
 	if err != nil {
 		fmt.Println("Error on json unmarshal:", err)
